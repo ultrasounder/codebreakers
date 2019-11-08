@@ -27,3 +27,42 @@ total_sum = 0
 for num in my_list:
     total_sum += num
 print(total_sum)
+
+#we can create a new list using the existing list with what we call list comprehension
+string_numbers = [str(x) for x in my_list]
+print(string_numbers)
+
+even_numbers = [x for x in my_list if(x % 2) == 0]
+print(even_numbers)
+
+#zip    
+names = ["sam", "Bob", "Ann"]
+ages = [10, 8, 13]
+
+#zip combines two parallel lists into a list of tuples
+names_and_ages = zip(names, ages)
+print(list(names_and_ages))
+
+#Enumaerate
+#Say we want to track the index along with the list elements
+names_in_order = ["sam", "bob", "ann"]
+
+for i, name in enumerate(names_in_order):
+    print(i,name)
+
+for name, ages in enumerate(names_and_ages):
+    print(name, ages)
+
+N = 10
+matrix = [[0 for i in range(0,N)] for j in range(0,N)]
+print(matrix)
+#sorting
+random_list = [5,1,3,4,2]
+
+#sorted returns a new list
+sorted_list = sorted(random_list)
+print(sorted_list)
+reverse_list = sorted(random_list, reverse = True)
+print(reverse_list)
+
+#calling .sort() modifies the list
