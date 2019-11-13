@@ -233,9 +233,32 @@ print(len(heap))
 #If you want to use a max heap, try the following. You can either change the '__lt__' function of your class
 #Alternatively you can also use heappush_max function
 
-max_heap = []
-heapq._heappush_max(max_heap, Person("Ann", '16'))
-heapq._heappush_max(max_heap, Person("Bob", 14))
-heapq._heappush_max(max_heap, Person("sam", 12))
-heapq._heappushpop_max(max_heap)
+# max_heap = []
+# heapq._heappush_max(max_heap, Person("Ann", '16'))
+# heapq._heappush_max(max_heap, Person("Bob", 14))
+# heapq._heappush_max(max_heap, Person("sam", 12))
+# heapq._heappushpop_max(max_heap)
   
+# A deque is a double ended linkedlist where you can pop from both left and right. All push and pop operations take  O(1)
+
+from collections import deque
+
+d = deque('ghi')
+
+for elem in d:
+    print elem.upper()
+
+d.append('j')#default appends to the rightmost location
+
+d.appendleft('f') #appendleft appends to the first location
+
+print(d)
+
+d.pop()#pops the rightmost element
+
+print(d)
+
+#peek at the leftmost item
+print(d[0])
+
+
