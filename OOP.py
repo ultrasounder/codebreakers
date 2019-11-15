@@ -42,8 +42,8 @@
 
 # print(snoopy.run("fast"))
 
-SUITS = ["DIAMONDS", "SPADES", "HEARTS", "CLUBS"]
-VALUES = ["ACE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "JACK", "QUEEN", "KING"]
+# SUITS = ["DIAMONDS", "SPADES", "HEARTS", "CLUBS"]
+# VALUES = ["ACE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "JACK", "QUEEN", "KING"]
 
 class Card:
     #Card constructor
@@ -52,7 +52,7 @@ class Card:
         self. value = value
 
     def show(self):
-        return "{} of {}".format(self.suit, self.value)
+        print "{} of {}".format(self.suit, self.value)
 
     #returns the suit of the card.
 
@@ -67,7 +67,25 @@ class Card:
 card = Card("HEARTS",4)
 # card.suit()
 # card.value()
-print(card.show())
+card.show()
+
+class Deck:
+    def __init__(self):
+        self.cards = []
+        self.build()
+
+    def build(self):
+        for s in ["spades", "clubs", "Diamonds", "Hearts"]:
+            for v in range(1, 14):
+                self.cards.append(Card(s,v))
+
+    
+    def show(self):
+        for c in self.cards:
+            c.show()
+deck = Deck()
+deck.show()
+
 
 
 
