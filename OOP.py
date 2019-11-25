@@ -45,14 +45,14 @@
 # SUITS = ["DIAMONDS", "SPADES", "HEARTS", "CLUBS"]
 # VALUES = ["ACE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "JACK", "QUEEN", "KING"]
 
-class Card:
-    #Card constructor
-    def __init__(self, suit, value):
-        self. suit = suit
-        self. value = value
+# class Card:
+#     #Card constructor
+#     def __init__(self, suit, value):
+#         self. suit = suit
+#         self. value = value
 
-    def show(self):
-        print "{} of {}".format(self.suit, self.value)
+#     def show(self):
+#         print "{} of {}".format(self.suit, self.value)
 
     #returns the suit of the card.
 
@@ -64,29 +64,37 @@ class Card:
 
 # class Deck:
 #     #creates a sorted deck of playing cards
-card = Card("HEARTS",4)
+# card = Card("HEARTS",4)
 # card.suit()
 # card.value()
-card.show()
+# card.show()
 
-class Deck:
-    def __init__(self):
-        self.cards = []
-        self.build()
+# class Deck:
+#     def __init__(self):
+#         self.cards = []
+#         self.build()
 
-    def build(self):
-        for s in ["spades", "clubs", "Diamonds", "Hearts"]:
-            for v in range(1, 14):
-                self.cards.append(Card(s,v))
+#     def build(self):
+#         for s in ["spades", "clubs", "Diamonds", "Hearts"]:
+#             for v in range(1, 14):
+#                 self.cards.append(Card(s,v))
 
     
+#     def show(self):
+#         for c in self.cards:
+#             c.show()
+# deck = Deck()
+# deck.show()
+
+
+class Fraction:
+
+    def __init__(self, top, bottom):
+        self.num = top
+        self.den = bottom
+
     def show(self):
-        for c in self.cards:
-            c.show()
-deck = Deck()
-deck.show()
-
-
-
-
-
+        print(self.num, "/", self.den)
+        
+myF = Fraction(3,5)
+myF.show()
