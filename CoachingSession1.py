@@ -51,9 +51,32 @@ class LinkedList:
         self.next = None
 
 
-def removeKthNodeFromEnd(head, k):
+    def removeKthNodeFromEnd(self, head, k):
+        counter = 1
+        fast = self.head
+        slow = self.head
+        
 
-    
+        for counter in range(k):
+            fast = fast.next
+            counter += 1
+        if fast is None:
+           head.value = head.next.value
+           head.next = head.next.next 
+           return
+        while fast.next is not None:
+            fast = fast.next
+            slow = slow.next
+        slow.next = slow.next.next
+        
+
+
+
+
+
+
+
+
 
 
 
