@@ -30,11 +30,6 @@ class Stack:
 
 
 
-
-
-
-
-
     def isEmpty(self):
         return self.size() == 0
     
