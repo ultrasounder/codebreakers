@@ -10,7 +10,7 @@ class Solution:
         slow = head
         for counter in range(n):
             fast = fast.next
-            count += 1
+            counter += 1
         if fast is None:
             head = head.next
             head.next = head.next.next

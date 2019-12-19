@@ -6,6 +6,9 @@
 #                   |
 #  B = {2, 4, 9, 11}
  
+ 
+
+     
 
 #Remove the k-th node
 
