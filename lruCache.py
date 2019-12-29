@@ -65,6 +65,7 @@ class DoublyLinkedList:
         front.prev = newNode
         newNode.next = self.front
         newNode.prev = self.front.prev
+        return newNode
 
 
     def deleteFromBack(self):
@@ -90,7 +91,9 @@ class LRU_Cache:
         cur = self.back.next
         out = ""
         while(cur):
-            out += cur.val
+            out += str(cur.val) + "!"
+            cur = cur.next
+        return out
 #if node exists then delete it and add it to the front and return the val
     def get(self, key, val):
         if key in self.inCache:
@@ -105,8 +108,9 @@ class LRU_Cache:
             self.nodes.delete(self.inCache[key])
             self.nodes.addToFront(key, value)
         else:
-            self.nodes.addToFront(key, value)
+            newNode = self.nodes.addToFront(key, value)
             self.countNodes += 1
+            self.inCache[key] = newNode
             if self.countNodes > self.capacity:
                 #also remove from inCache
                 key = self.nodes.deleteFromBack()
