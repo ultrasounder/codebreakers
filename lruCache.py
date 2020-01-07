@@ -73,16 +73,9 @@ class DoublyLinkedList:
         self.back.next = self.back.next.next
         return key
 
-
-    
-
-
-
-
-
 class LRU_Cache:
     def __init__(self, capacity):
-        self. node = DoublyLinkedList()
+        self. node = DoublyLinkedList() ## No space is needed. Also, you call this class but your __init__ signitature on line 51 takes 2 arguements. I am not sure which one you actually intend to have but I would assume you didn't want 2 arguements for the init on line 51.
         self.capacity = capacity
         #key, node obj
         self.inCache = {}
