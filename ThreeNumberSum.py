@@ -8,13 +8,13 @@ class Solution:
             right = len(nums) - 1
             while left < right:
                 currentSum = nums[i] + nums[left] + nums[right]
-                if currentSum == target:
+                if currentSum == 0:
                     triplets.append([nums[i], nums[left], nums[right]])
                     left += 1
                     right -= 1
-                elif currentSum < target:
+                elif currentSum < 0:
                     left += 1
-                elif currentSum > target:
+                elif currentSum > 0:
                     right -= 1
         return []
                     
