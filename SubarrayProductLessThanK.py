@@ -19,4 +19,4 @@ def numSubarrayProductLessThanK(nums, k):
 
        
 nums = [10, 5, 2, 6]
-numSubarrayProductLessThanK(nums, 100)
+print(numSubarrayProductLessThanK(nums, 100))
