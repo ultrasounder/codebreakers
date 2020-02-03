@@ -1,6 +1,6 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-
+  
         currentLongest = [0, 1] # values of starting index and ending index of the longest palindromic substring
         """ew are initializing starting index to be the first character"""
         for i in range(1, len(s)):
@@ -8,7 +8,7 @@ class Solution:
             even = self.getLongestPalindromeFromgetLongestPalindromeFrom(s, i, i+1)
             longest = max(odd, even, key= lambda x:x[1] - x[0])
             currentLongest = max(longest, currentLongest, key= lambda x: x[1]-x[0])
-        return str[currentLongest[0]:currentLongest[1]]
+        return str[currentLongest[0]:currentLongest[1]] # variable name is s, not str. Very minor mistake
 
 
     def getLongestPalindromeFrom(self, s, left_index, right_index):
@@ -18,7 +18,14 @@ class Solution:
             left_index -= 1
             right_index += 1
         return [left_index + 1, right_index]
-
+        '''
+        Overall, your solution is great. Perfect use of the helper method. One case that we do not cover is
+        if our string is even and starts on the first character. For example "aa" would only return "a". We can fix 
+        this by starting the for loop at 0. This is because your even looks head and not behind, so we lose the 
+        case of a even numbered palindrome if we do not start at 0. I was trying to illustrate during the lesson that we do
+        not check the first character when looking for an odd palindrome because the answer will always be 1. We do need to check
+        for the even case because this could give us a new longest substring. 
+        '''
 
 
 
