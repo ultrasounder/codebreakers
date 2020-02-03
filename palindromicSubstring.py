@@ -2,6 +2,23 @@ class Solution:
     def longestPalindrome(self, s: str) -> str:
 
         currentLongest = [0, 1] # values of starting index and ending index of the longest palindromic substring
+        """ew are initializing starting index to be the first character"""
+        for i in range(1, len(s)):
+            odd = self.getLongestPalindromeFromgetLongestPalindromeFrom(s, i-1, i+1)# Left index and right index
+            even = self.getLongestPalindromeFromgetLongestPalindromeFrom(s, i, i+1)
+            longest = max(odd, even, key= lambda x:x[1] - x[0])
+            currentLongest = max(longest, currentLongest, key= lambda x: x[1]-x[0])
+        return str[currentLongest[0]:currentLongest[1]]
+
+
+    def getLongestPalindromeFrom(self, s, left_index, right_index):
+        while left_index >= 0 and right_index < len(s):
+            if s[left_index] != s[right_index]:
+                break
+            left_index -= 1
+            right_index += 1
+        return [left_index + 1, right_index]
+
 
 
 
