@@ -26,10 +26,15 @@ class Solution:
         # result.append(currentAnagramGroup)
 
         # return result
-
+        '''
+        Overall the solution looks great! The code quality is very high. If the longest string is K and we have
+        N words, then our runtime will be O(N*K*log(K)). This is pretty good! We can improve the log by using the algorithm we
+        discussed on Sunday: count letters of a given word in a string, record this as a tuple, hash the tuple to a list of those
+        words. We then are linear in both N and K, giving us O(N*K). Nice work!
+        '''
 
         anagrams = {} # create a hashtable of anagrams
-        for word in str: #Iterate through the entire string
+        for word in str: #Iterate through the entire string #Variable is named strs, not str. Very minor detail
             sortedWord = "".join(sorted(word)) # create a new string by sorting the words in the string 
             if sortedWord in anagrams:# Check if the sorted word is present in the hashmap O(1)
                 anagrams[sortedWord].append(word) # if its great, then add it to the hasmap
