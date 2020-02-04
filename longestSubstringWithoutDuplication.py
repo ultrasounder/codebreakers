@@ -12,3 +12,11 @@ class Solution:
                 longest = [startIndex, i + 1] # we update the start index 
             last_seen[char] = i# update the last seen character to the hashtable
         return s[longest[0]:longest[1]] # return the slice the longest substring
+    
+    '''
+    Awesome solution with 0 syntax errors. Nice work! You make a cool modification to this by actually jumping the pointer
+    ahead to the next character. This interestingly doesn't improve the run time because the longest substring we can have is 26
+    letters, which is a constant. We could also save a bit of memory by using a set instead of a dictionary where we loop over 
+    every character. This would not change our big O run time or memory complexity, it is a just a different way of doing the problem
+    in case the interviewer asks you to expand on the solution. Nice work!
+    '''
