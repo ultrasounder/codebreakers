@@ -3,9 +3,9 @@ class Solution:
         intervals.sort(key = lambda x:[x])
         result = []
         for curr in intervals:
-            if result and result[-1][1] >= curr[0]: # If there is an interval and if the previous end is greater than the current start
-                result[-1][1] = max(result[-1][1], curr[1]) # we just swap
+            if result and result[-1][1] >= curr[0]:
+                result[-1][1] = max(result[-1][1], curr[1])
             else:
-                result.append(curr) #No intervals just add the current 
+                result.append(curr)
             return result
             
