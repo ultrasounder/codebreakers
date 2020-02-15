@@ -26,7 +26,7 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if len(matrix) == 0:
-            return -1
+            return False
         rows = len(matrix)
         columns = len(matrix[0])
 
