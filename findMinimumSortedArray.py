@@ -22,7 +22,7 @@ class Solution:
 
         if len(nums) == 0:
             return -1
-        elif len(nums) == 1:
+        elif len(nums) == 1: # We do not even need this edge case check because your prgram automatically handles it
             return nums[0]
         
         left = 0
@@ -37,13 +37,12 @@ class Solution:
                 left = midpoint + 1
             else:
                 right = midpoint - 1
-                
-        
-        
-        
-        
-        return nums[left]
 
+        return nums[left]
+    
+    '''
+    Great solution. This runs great. Only have one suggestion which I pointed out above. Nice work!
+    '''
 
 
         
