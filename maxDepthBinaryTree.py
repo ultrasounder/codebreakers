@@ -10,4 +10,7 @@ class Solution:
         if root is None:
             return 0
         return 1 + max(self.maxDepth(root.left),self.maxDepth(root.right))
+    '''
+    Nice solution. This is exactly right. Run time will be O(N) because we need to search every node.
+    '''
         
