@@ -10,7 +10,7 @@ def findClosestValueInBstHelper(tree, target, closest):
     if abs(target - closest) > abs(target - tree.value):
         closest = tree.value
     if target < tree.value:
-        return findClosestValueInBstHelper(tree.value, target, closest) # shouldn't this be tree.left?
+        return findClosestValueInBstHelper(tree.left, target, closest) # shouldn't this be tree.left?
     elif target > tree.value:
         return findClosestValueInBstHelper(tree.right, target, closest)
     else:
