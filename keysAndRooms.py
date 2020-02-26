@@ -33,5 +33,14 @@ class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
 
 
-        visited = {}#creating a hashset to hold all the visited rooms
-        visited.
+        visited = set()#creating a hashset(SET) to hold all the visited rooms
+        visited.add(0) # adding the root node
+        stack = []
+        stack.append(0)
+        while stack is not None:
+            keys = rooms[stack.pop()]
+            for key in keys:
+                if not visited.__contains__(key):
+                    visited.add(key)
+                    stack.append(key)
+        return len(visited) == len(rooms)
