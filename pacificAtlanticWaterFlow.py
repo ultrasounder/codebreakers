@@ -1,3 +1,5 @@
+from collections import deque
+lst = deque()
 '''Given an m x n matrix of non-negative integers representing the height of each unit cell in a continent, the "Pacific ocean" touches the left and top edges of the matrix and the "Atlantic ocean" touches the right and bottom edges.
 
 Water can only flow in four directions (up, down, left, or right) from a cell to another one with height equal or lower.
@@ -43,15 +45,43 @@ class Solution:
 
         #Process Cell
 
-        ocean[row][column] = 1
+            ocean[row][column] = 1
 
 
 
         #Call DFS as needed
 
-        dfs(matrix, row, column, matrix[row][column], ocean)
-        dfs(matrix, row + 1, column, matrix[row][column], ocean)
-        dfs(matrix, row, column - 1, matrix[row][column], ocean)
-        dfs(matrix, row, column + 1, matrix[row][column, ocean])
+            dfs(matrix, row, column, matrix[row][column], ocean)
+            dfs(matrix, row + 1, column, matrix[row][column], ocean)
+            dfs(matrix, row, column - 1, matrix[row][column], ocean)
+            dfs(matrix, row, column + 1, matrix[row][column, ocean])
+
+        pacific = []
+        atlantic = []
+
+
+        
+        for col in range(len(matrix)):
+            dfs(matrix, 0, col, float('-inf'), pacific)
+            dfs(matrix, 0, col, float('-inf'), pacific)
+            dfs(matrix, len(matrix) - 1, col, float('-inf'), atlantic)
+            
+        for row in range(len(matrix)):
+            dfs(matrix, row, 0, float('-inf'), pacific)
+            dfs(matrix, row, len(matrix[0] - 1), float('-inf'), atlantic)
+        response = []
+
+        #iteratr thorugh the matrix and find common elements
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0] - 1)):
+                if pacific[i][j] and  atlantic[i][j] == 1:
+                    lst.append(i)
+                    lst.append(j)
+                    response.append(lst)
+        return response
+
+
+
+
 
 
