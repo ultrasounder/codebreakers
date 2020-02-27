@@ -30,16 +30,16 @@ class Solution:
     def pacificAtlantic(self, matrix: List[List[int]]) -> List[List[int]]:
         
         
-        def dfs(matrix, row, column, prevVal, ocean = []):
+        def dfs(matrix, row, column, prevVal, ocean = []): # why is the ocean initialize to empty list?
 
 
           #check necessary conditions 
-            if row < 0 or column < 0 or row > len(matrix) - 1 or column > len(matrix) - 1:
+            if row < 0 or column < 0 or row > len(matrix) - 1 or column > len(matrix) - 1: # this index should be matrix[0] for column
                 return
             elif matrix[row][column] < prevVal:
                 return
 
-            elif ocean[row][column] == 1:
+            elif ocean[row][column] == 1: # this is constantly going to be an empty ocean so we are going to get index out of bounds every time
                 return        
       
 
@@ -51,7 +51,7 @@ class Solution:
 
         #Call DFS as needed
 
-            dfs(matrix, row, column, matrix[row][column], ocean)
+            dfs(matrix, row, column, matrix[row][column], ocean) # why are we going to the same square and not the one below?
             dfs(matrix, row + 1, column, matrix[row][column], ocean)
             dfs(matrix, row, column - 1, matrix[row][column], ocean)
             dfs(matrix, row, column + 1, matrix[row][column, ocean])
@@ -80,7 +80,11 @@ class Solution:
                     response.append(lst)
         return response
 
-
+        '''
+        Look through the comments and let me know if you are able to get it working. Your approach seems reasonable but I am not 
+        exactly sure why you are initlizing the ocean to empty and never adding to it. Would be happy to look once this is changed.
+        Just let me know. Keep it up!
+        '''
 
 
 
