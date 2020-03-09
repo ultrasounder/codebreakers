@@ -1,0 +1,124 @@
+'''
+coins = [1,2,5]
+
+n = 30
+
+opt = [1-29]
+
+for each coin:
+    opt[30] = min for all coins (opt[30-coin] + 1)
+    opt[25] = 5 (5 + 5 + 5 + 5 + 5)
+    opt[30] = 5 + 1 ((5 + 5 + 5 + 5 + 5) + 5)
+          0  1  2  3  4  5  6  7  8
+    dp = [0, 1, 1, 2, 2, 1, 2, 2, 3
+    
+    dp[7]  = min(dp[7-1], dp[7-2], dp[7-5]) + 1
+'''
+
+
+
+def minCoinChange(coins, n):
+    
+    # n = numRows
+'''Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.'''
+
+'''
+def fib(n):
+    n1 = n2 = 1
+    if n < 3:
+        return 1
+    
+    for i in range(n-2):
+        next = n1 + n2
+        n1 = n2
+        n2 = next
+    return next
+'''
+
+''
+coins = [1,2,5]
+
+n = 30
+
+opt = [1-29]
+
+for each coin:
+    opt[30] = min for all coins (opt[30-coin] + 1)
+    opt[25] = 5 (5 + 5 + 5 + 5 + 5)
+    opt[30] = 5 + 1 ((5 + 5 + 5 + 5 + 5) + 5)
+          0  1  2  3  4  5  6  7  8
+    dp = [0, 1, 1, 2, 2, 1, 2, 2, 3
+    
+    dp[7]  = min(dp[7-1], dp[7-2], dp[7-5]) + 1
+'''
+
+
+# base case: 0 cents takes 0 coins
+# recurrence: look back to previous optimal values by coin change amounts (and add one)
+
+def minCoinChange(coins, n):
+    dp = [n+1] * n+1
+    dp[0] = 0 
+    
+    for i in range(len(dp)):
+        for coin in coins:
+            if coin > i:
+                continue
+            dp[i] = min(dp[i], dp[i-coin] + 1)
+    return dp[-1]
+    
+    
+    # n = numRows
+'''Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.'''
+
+'''
+def fib(n):
+    n1 = n2 = 1
+    if n < 3:
+        return 1
+    
+    for i in range(n-2):
+        next = n1 + n2
+        n1 = n2
+        n2 = next
+    return next
+'''
+
+'''
+unique paths
+
+def uniquePaths(height, width):
+    # set up height X width grid
+    grid = []
+    temp = []
+    for i in range(width):
+        temp.append(0)
+        for j in range(height):
+            grid.append(temp.copy())
+            
+    # fill out our dp table
+    for i in range(width):
+        for j in range(height):
+            # out of bounds edge cases
+            if i == 0 and j == 0:
+                continue
+            elif i == 0:
+                grid[j][i] = grid[j-1][i] + 1
+            elif j == 0:
+                grid[j][i] = grid[j][i-1] + 1
+            else: 
+                # general case
+                grid[j][i] = min(grid[j][i-1], grid[j-1][i]) + 1
+                
+    return grid[-1][-1]
+            
+    [
+     [0, 1, 2]
+     [1, 2, 3]
+     [2, 3, 4]
+    
+    ]
+
+'''
+
+
