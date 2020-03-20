@@ -8,6 +8,7 @@ class Solution:
 
         sorted(words, key=len)
         dp = collections.defaultdict(int)
+        # words.sort(key=len)
         result = 0
         for word in words:
             for index in range(len(word)):
@@ -18,6 +19,13 @@ class Solution:
                     dp[word] = max(dp[word], 1)
             result = max(dp[word], result)
         return result
+    
+    '''
+    Nice work. I have to give it to you: that was one weird bug! So it looks like what you are doing with the sorted function
+    is not actually sorting the list by length. Try using the line that I commented out and see how the program runs. The prorgram
+    is doing exactly what it should, it is just the words were not properly sorted. Your solution was much closer than you thought!
+    Awesome job!
+    '''
 
 
     #     StringChains = {} #Hash map to store all the strings
