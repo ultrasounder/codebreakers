@@ -25,3 +25,7 @@ class Solution:
         for i in range(len(cost) + 1):
             dp[i] = min(dp[i-1], dp[i-2]) + (0 if i == len(cost) else cost[i])
         return dp[len(cost)]
+    
+    '''
+    Awesome work! perfect solution :)
+    '''
