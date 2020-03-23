@@ -38,23 +38,23 @@
 
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
-        # stack = []
-        # left_child_val = float('inf')
+        stack = []
+        prev = None
+        while stack or root:
+            while root:
+                stack.append(root)
+                root = root.left
 
-        # while stack is not None or root is not None:
-        #     while stack is not None:
-        #         stack.append(root)
-        #         root = root.left
-            
-        #     root = stack.pop()
-        #     if root.val <= left_child_val:
-        #         return False
-        #     left_child_val = root.val
-        #     root = root.right
+            root = stack.pop()
+            if prev and prev.val >= root.val:
+                return False
+            prev = root
+            root = root.right
+        return True
 
 
 
-        # return True
+        return True
 #validate BST, the formulae for the value of any child node is;  
 #   10 <= Node.value  < 10  10 <= Node.value < 15 time complexity O(N) and space complexity O(d), where d is the depth of the 
 # longest branch of the treee
@@ -65,26 +65,26 @@ class Solution:
     #  2     5  13   22
     # 1            14
 
-def validateBst(root):
-    return _validateBstHelper(root, float("-inf"), float("inf"))
+# def validateBst(root):
+#     return _validateBstHelper(root, float("-inf"), float("inf"))
 
-def _validateBstHelper(tree, minValue, maxValue):
-    if tree is None:
-        return True
-    if tree.value < minValue    or tree.value > maxValue:
-        return False
-    leftIsValid = _validateBstHelper(tree.left, minValue, tree.value)
-    return leftIsValid and _validateBstHelper(tree.right, tree.value, maxValue)
-
-
+# def _validateBstHelper(tree, minValue, maxValue):
+#     if tree is None:
+#         return True
+#     if tree.value < minValue    or tree.value > maxValue:
+#         return False
+#     leftIsValid = _validateBstHelper(tree.left, minValue, tree.value)
+#     return leftIsValid and _validateBstHelper(tree.right, tree.value, maxValue)
 
 
-def validate(root):
-    return helper(root, float('inf'), -float('inf'))
 
-def helper(root, ceiling, floor):
-    if root == None:
-        return True
-    if root.val > ceiling or root.val < floor:
-        return False
-    return helper(root.left, min(root.val, ceiling), floor) and helper(root.right, ceiling, max(root.val, floor))
+
+# def validate(root):
+#     return helper(root, float('inf'), -float('inf'))
+
+# def helper(root, ceiling, floor):
+#     if root == None:
+#         return True
+#     if root.val > ceiling or root.val < floor:
+#         return False
+#     return helper(root.left, min(root.val, ceiling), floor) and helper(root.right, ceiling, max(root.val, floor))

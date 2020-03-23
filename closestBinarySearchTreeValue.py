@@ -27,6 +27,7 @@ Input: root = [4,2,5,1,3], target = 3.714286
 Output: 4'''
 
 # Definition for a binary tree node.
+#O(log(N)) time and O(N) space
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -35,4 +36,22 @@ class TreeNode:
 
 class Solution:
     def closestValue(self, root: TreeNode, target: float) -> int:
-        
+        return ClosestValueHelper(root, target, float("inf"))
+    
+
+    def ClosestValueHelper(self, root, target, closest):
+        if root is None:
+            return closest
+        if abs(target - closest) > abs(target - root.val):
+            closest = root.val
+        if target < root.val:
+            return ClosestValueHelper(root.left, target, closest)
+        elif target > root.val:
+            return ClosestValueHelper(root.right, target, closest)
+        else:
+            return closest
+
+
+
+
+
