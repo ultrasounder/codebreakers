@@ -5,5 +5,7 @@ class Solution:
             return False
 
         for current_time in len(prices) - 1:
-            if prices[current_time + 1] > prices[current_time] 
+            if prices[current_time + 1] > prices[current_time]:
+                max_profit += prices[current_time + 1] - prices[current_time]
+        return max_profit
         
