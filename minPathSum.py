@@ -1,8 +1,10 @@
 class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
+        
 
         m = len(grid)
         n = len(grid[0])
+        dp = [0] * m
 
         if len(grid) == 1:
             return 1
@@ -11,8 +13,8 @@ class Solution:
         
         for i in range(n):
             for j in range(m):
-                grid[i][j] += min(grid[i-1][j], grid[i][j-1])
-        return grid[i-1][j-1]
+                dp[i][j] += min(grid[i-1][j], grid[i][j-1])
+        return dp[i-1][j-1]
         
         '''
         You have the right idea with this one. You want to use DP to build off previously explored paths.
