@@ -29,7 +29,7 @@ class Solution:
 
     
     '''
-    Nice solution. The run time will only be log(N) for a balanced tree. I m assuming you meant this when you wrote 
-    out the runtimes for the proiblem. Nice job using the helper method. We see how effective this is in tackling recursive solutions.
+    Nice solution. The run time will only be log(N) for a balanced tree. I am assuming you meant this when you wrote 
+    out the run times for the problem. Nice job using the helper method. We see how effective this is in tackling recursive solutions.
     Looks like it will return the right answer aside from the small bug I pointed out. Good work!
     '''
