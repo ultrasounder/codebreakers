@@ -19,11 +19,19 @@ def houseRobber(arr):
     # dp[i] = max(dp[i-2], dp[i-3]) + arr[i]
     n = len(arr)
     dp = [0] * n
-    dp[0], dp[1], dp[2] = arr[0], arr[1], arr[0] + arr[2] # base cases
-    for i in range(3, n):
-        dp[i] = max(dp[i-2], dp[i-3]) + arr[i] # recurrence
-    print(dp)
-    return max(dp[-1], dp[-2])
+    # dp[0], dp[1], dp[2] = arr[0], arr[1], arr[0] + arr[2] # base cases
+    # for i in range(3, n):
+    #     dp[i] = max(dp[i-2], dp[i-3]) + arr[i] # recurrence
+    # print(dp)
+    # return max(dp[-1], dp[-2])
+    dp[0] = 0
+    dp[1] = arr[0]
+    for i in range(1, n):
+        val = arr[i]
+        dp[i+1] = max(dp[i], dp[i-1] +  val)
+    return dp[n]
+
+
 
 # print(houseRobber([2,7,9,3,1]))
 
