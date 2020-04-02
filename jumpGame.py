@@ -24,12 +24,29 @@ def houseRobber(arr):
     #     dp[i] = max(dp[i-2], dp[i-3]) + arr[i] # recurrence
     # print(dp)
     # return max(dp[-1], dp[-2])
-    dp[0] = 0
-    dp[1] = arr[0]
-    for i in range(1, n):
-        val = arr[i]
-        dp[i+1] = max(dp[i], dp[i-1] +  val)
-    return dp[n]
+    #****************#
+    # dp[0] = 0
+    # dp[1] = arr[0]
+    # for i in range(1, n):
+    #     val = arr[i]
+    #     dp[i+1] = max(dp[i], dp[i-1] +  val)
+    # return dp[n]
+# A new solution that I came up with PR
+    #attack the base cases first like recursion
+    if nums is None or len(nums) == 0:
+        return 0
+    if len(nums) == 1:
+        return nums[0]
+    if len(nums) == 2:
+        return max(nums[0], nums[1])
+    dp[i] = len(nums)
+    dp[0] = nums[0]
+    dp[1] = max(nums[0], nums[1])
+    for in range(2, len(dp)):
+        dp[i] = max(nums[i] + dp[i-2], dp[i-1])
+    return dp[n-1]
+
+
 
 
 
