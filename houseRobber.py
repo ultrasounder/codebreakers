@@ -14,3 +14,26 @@ class Solution:
     for in range(2, len(dp)): # now for the nth house, our recurrence is current house and two houses before or the previous house
         dp[i] = max(nums[i] + dp[i-2], dp[i-1])
     return dp[n-1]
+
+'''
+A few comments looking through this:
+1. We want to make sure we indent our code both for readability and running (Python) purposes (lines 5-16)
+2. We want to make sure we have i defined in our for loop (line 14)
+3. We want to make sure n is defined (line 16)
+
+Otherwise, your solution is even more concise than what we talked about in our lesson. I typically do not teach it that way because I
+find it much easier to wrap my head around the other way when doing it for the first time. This is a great solution. My solution is 
+similiar. We can be more concise in the base case checks, etc. but the idea is exactly the same. For the base cases, we know that if
+the length of the array is less than 3, we just rob the max house, so we can collapse our edge cases down a bit. Besides that, everything
+looks really good. Nice work!
+
+class Solution:
+    def rob(self, arr):
+        if not arr: return 0
+        if len(arr) < 3: return max(arr)
+        dp = [0] * len(arr)
+        dp[0], dp[1] = arr[0], max(arr[0], arr[1])
+        for i in range(2, len(arr)):
+            dp[i] = max(dp[i-2] + arr[i], dp[i-1])
+        return dp[-1]
+'''
