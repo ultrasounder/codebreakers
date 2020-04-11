@@ -1,0 +1,73 @@
+Fundamentals
+- python is interpretted (mostly!)
+- do not specifiy types
+- can be OO but does not need to be
+Stacks
+- First in, last out
+- imagine this is a stack of dinner plates
+- operations
+    - push -> append to list - O(1)
+    - pop -> pop from end of list - O(1)
+    - len -> O(1)
+    x = 'jfalfaefjkaskfjdfkjgsldfkjg'
+    for i in range(n):
+        x += 'a' n^2
+    - join -> x += 'a' n
+- use cases:
+    - keep track of things added in a sequence, specifically looking at things we added last
+    - using backspace/looking at recent elements
+    - back space string compare
+    - parenthesis matching
+Queues
+- first in, first out
+- imagine this like a line at the store
+- implementations:
+    - singly linked link list with tail pointer   head O -> O -> O -> O -> O  tail
+                                                  | add
+    - circular array with 2 pointers [X,1,1,1  1  X    X     X    ]
+                                        |remove
+- operations:
+    - enqueue- add to back of queue - O(1)
+    - dequeue - remove from front of queue - O(1)
+    - size - number of elements - O(1)
+    - isEmpty - O(1)
+- use cases
+    - BFS- add all visited nodes children to queue and pop them off as we visit them
+    -
+Deque
+- combination of a queue and a stack
+- imagine this like deck of cards- we can draw from the top or bottom at any point and also add to the top or bottom at amy point
+- implementations
+    - doubly linked list with tail pointer
+    - circular array with 2 pointers
+- operations
+    - addLeft - O(1)
+    - addRight - O(1)
+    - popLeft - O(1)
+    - popRight - O(1)
+    - size - O(1)
+    - isEmpty - O(1)
+Arrays
+- straight chunk of memory with a start and even space between every element
+- imagine this like a 2d grid with height 1 and we have every square numbered
+- operations:
+    - append - add element to back of list - O(1)
+    - remove - removes first matching element - O(n)
+    - len - getting length of list - O(1)
+    - join - concatenate all strings together in a list - O(N)
+    - pop() - pops end of the list - O(1)
+    - pop(0) - pops at specific index - O(n)
+    - insert(0) - insert into a specific index - O(n)
+-Use cases:
+    - EVERYWHERE
+    - stores things where we want to maintain order
+Hashmap
+-
+Set
+Strings
+Sorting
+Recursion
+Heaps
+Graphs- BFS/DFS
+Dynamic Programming
+LRU Cache

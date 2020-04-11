@@ -39,17 +39,33 @@ class Solution:
         return ClosestValueHelper(root, target, float("inf"))
     
 
+    # def ClosestValueHelper(self, root, target, closest):
+    #     if root is None:
+    #         return closest
+    #     if abs(target - closest) > abs(target - root.val):
+    #         closest = root.val
+    #     if target < root.val:
+    #         return ClosestValueHelper(root.left, target, closest)
+    #     elif target > root.val:
+    #         return ClosestValueHelper(root.right, target, closest)
+    #     else:
+    #         return closest
+
     def ClosestValueHelper(self, root, target, closest):
-        if root is None:
-            return closest
-        if abs(target - closest) > abs(target - root.val):
-            closest = root.val
-        if target < root.val:
-            return ClosestValueHelper(root.left, target, closest)
-        elif target > root.val:
-            return ClosestValueHelper(root.right, target, closest)
-        else:
-            return closest
+        currentNode = root
+        while currentNode is not None:
+            
+            if abs(target - closest) > abs(target - currentNode.val):
+                closest = currentNode.val
+            if target < currentNode.val:
+                currentNode = currentNode.left
+            elif target > currentNode.val:
+                currentNode = currentNode.right
+            else:
+                return closest
+
+
+
 
 
 
