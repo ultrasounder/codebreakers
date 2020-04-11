@@ -11,3 +11,7 @@ class Solution:
             fast = fast.next.next
             slow = slow.next
         return slow
+'''
+Great solution. This is exactly what we want to be doing. We do this in one pass with constant memory.
+There is no way to index a linked list so this has to be the best solution. Nice work!
+'''
