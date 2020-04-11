@@ -10,3 +10,7 @@ class Solution:
             if i+1 in arr:
                 count += 1
         return count
+'''
+Great solution. This runs in linear time and is the ideal solution. We sacrifice memory in order to bring down our time complexity
+which is totally okay to do. Nice work!
+'''
