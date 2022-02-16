@@ -31,7 +31,7 @@ class Solution:
         maxSoFar = 0
         maxEndingHere = nums[0]
         #we will investigate the rest of the items in the array from index 1 onward
-        for in range(1, n):
+        for i in range(1, n):
             maxEndingHere = max(maxEndingHere + nums[i], nums[i])
 
             maxSoFar = max(maxSoFar, maxEndingHere)
